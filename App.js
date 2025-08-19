@@ -1,20 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import IntroScreen from './src/screens/IntroScreen';
+import HomeScreen from './src/screens/HomeScreen';
+
+import ChatScreen from "./src/screens/messages/ChatScreen";
+import ChatListScreen from "./src/screens/messages/ChatListScreen";
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Intro" component={IntroScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Messages" component={ChatListScreen} options={{ title: "Messages" }} />
+        <Stack.Screen name="ChatList" component={ChatListScreen} options={{ title: "Messages"}} />
+        <Stack.Screen name="Chat" component={ChatScreen} options={({ route }) => ({ title: route.params?.name || "chat" })}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

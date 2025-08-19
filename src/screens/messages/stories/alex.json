@@ -1,0 +1,55 @@
+
+{
+  "start": 1,
+  "nodes": [
+    {
+      "id": 1,
+      "npc": { "text": "Hey… are you still there?", "typingMs": 1200 },
+      "choices": [
+        { "text": "Yeah, I’m here.", "next": 2 },
+        { "text": "Who is this?", "next": 3 }
+      ]
+    },
+    {
+      "id": 2,
+      "npc": { "text": "Good. I thought I lost you.", "typingMs": 900 },
+      "choices": [
+        { "text": "What’s going on?", "next": 4 }
+      ]
+    },
+    {
+      "id": 3,
+      "npc": { "text": "It’s Alex. We met at Elmwood.", "typingMs": 1000 },
+      "choices": [
+        { "text": "Right… Alex.", "next": 4 }
+      ]
+    },
+    {
+      "id": 4,
+      "npc": { "text": "Something’s wrong at the trail. I found a phone.", "typingMs": 1400 },
+      "choices": [
+        { "text": "Where did you find it?", "next": 5 },
+        { "text": "Call the police.", "next": 6 }
+      ]
+    },
+    {
+      "id": 5,
+      "npc": { "text": "Near the old bridge. It was still warm.", "typingMs": 1200 },
+      "choices": [
+        { "text": "Open the gallery.", "next": 7 }
+      ]
+    },
+    {
+      "id": 6,
+      "npc": { "text": "I tried. Signal’s dead here. I need you.", "typingMs": 1100 },
+      "choices": [
+        { "text": "Okay. I’m in.", "next": 7 }
+      ]
+    },
+    {
+      "id": 7,
+      "npc": { "text": "I’ll send you a picture in 5 minutes… stay ready.", "typingMs": 1500, "delayMs": 5000 },
+      "choices": []
+    }
+  ]
+}
